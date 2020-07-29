@@ -14,19 +14,21 @@ const DashBoard = () => {
 
     const token = isAuthenticated().token
 
-    const init = (userId, token) => {
+    const init = () => {
+        const userId = _id
+
         getPurchaseHistory(userId, token)
             .then(data => {
                 if (data.error) {
-                    console.log(data.error)
+
                 } else {
                     setHistory(data)
                 }
             })
     }
 
-    useEffect(() => {
-        init(_id, token)
+    useEffect((_id, token) => {
+        init()
     }, [])
 
     const userLinks = () => {
@@ -66,7 +68,7 @@ const DashBoard = () => {
                     <li className="list-group-item">
                         {history.map((h, i) => {
                             return (
-                                <div>
+                                <div key={i}>
                                     <hr />
                                     {h.products.map((p, i) => {
                                         return (

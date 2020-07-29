@@ -5,6 +5,7 @@ import { getCategories, getFilteredProducts } from "./apiCore"
 import CheckBox from './CheckBox'
 import RadioBox from './RadioBox'
 import { prices } from "./FixedPrices"
+import Pagination from "./Pagination"
 
 const Shop = () => {
     const [myFilters, setMyFilters] = useState({
@@ -16,10 +17,14 @@ const Shop = () => {
     })
     const [categories, setCategories] = useState([])
     const [error, setError] = useState(false)
-    const [limit, setLimit] = useState(5)
+    const [limit] = useState(5)
     const [skip, setSkip] = useState(0)
     const [size, setSize] = useState(0)
     const [filteredResults, setFilteredResults] = useState([])
+
+    //   ******** pagination   *********
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage] = useState(8)
 
     const init = () => {
         getCategories()
@@ -37,6 +42,7 @@ const Shop = () => {
     useEffect(() => {
         init()
         loadFilterResults(skip, limit, myFilters.filters)
+
     }, [])
 
     const handleFilters = (filters, filterBy) => {
@@ -44,7 +50,7 @@ const Shop = () => {
         const newFilter = { ...myFilters }
         newFilter.filters[filterBy] = filters
 
-        if (filterBy == "price") {
+        if (filterBy === "price") {
             let priceValues = handlePrice(filters);
             newFilter.filters[filterBy] = priceValues
         }
@@ -52,6 +58,7 @@ const Shop = () => {
         loadFilterResults(myFilters.filters)
 
         setMyFilters(newFilter)
+
     }
 
     const handlePrice = value => {
@@ -80,37 +87,28 @@ const Shop = () => {
             })
     }
 
-    const loadMore = () => {
-        let toSkip = skip + limit
 
-        getFilteredProducts(skip, limit, myFilters.filters)
-            .then(data => {
-                if (data.error) {
-                    setError(data.error)
-                } else {
-                    setFilteredResults([...filteredResults, ...data.data])
-                    setSize(data.size)
-                    setSkip(toSkip)
-                }
-            })
+
+    // // get current post paginate
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPost = filteredResults.slice(indexOfFirstPost, indexOfLastPost);
+
+    // change page
+    const paginate = pageNumer => {
+        setCurrentPage(pageNumer)
     }
 
-    const loadMoreButton = () => {
-        return (
-            size > 0 && size >= limit && (
-                <button onClick={loadMore} className="btn btn-warning mb-5">
-                    loadMore
-             </button>
-            )
-        )
-    }
+
+    console.log(error)
 
     return (
         <Layout
+
             title="Product Page" description=" Ecomerce app" className="container-fluid"
         >
             <div className="row">
-                <div className="col-4">
+                <div className="col-3">
                     <h4>Filter By Categories </h4>
                     <ul>
                         <CheckBox categories={categories} handleFilters={filters =>
@@ -128,10 +126,10 @@ const Shop = () => {
                         />
                     </ul>
                 </div>
-                <div className="col-8">
+                <div className="col-7">
                     <h2 className="mb-4">Products</h2>
                     <div className="row">
-                        {filteredResults.map((product, i) => (
+                        {currentPost.map((product, i) => (
 
                             <div key={i} className="col-4 mb-3">
                                 <Card product={product}></Card>
@@ -140,7 +138,11 @@ const Shop = () => {
                         ))}
                     </div>
                     <hr></hr>
-                    {loadMoreButton()}
+                    <Pagination
+                        postPerPage={postPerPage}
+                        totalPost={filteredResults.length}
+                        paginate={paginate}
+                    />
                 </div>
             </div>
 

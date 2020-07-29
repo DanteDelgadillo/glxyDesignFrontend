@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import Layout from "./Layout"
 import { getBraintreeClientToken, processPayment, createOrder } from "./apiCore"
 import { emptyCart } from "./CartHelper"
-import Card from "./Card";
 import { isAuthenticated } from "../auth"
 import DropIn from "braintree-web-drop-in-react"
 
