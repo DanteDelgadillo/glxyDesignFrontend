@@ -141,3 +141,21 @@ export const createOrder = (userId, token, createOrderData) => {
         })
         .catch(error => console.log(error))
 };
+
+export const sentEmail = (name, email, subject, message) => {
+
+    return fetch(`${process.env.REACT_APP_API_URL}/emailForm`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+
+
+        },
+        body: JSON.stringify(name, email, subject, message)
+    })
+        .then(response => {
+            return response.json()
+        })
+        .catch(error => console.log(error))
+};
