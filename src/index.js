@@ -5,7 +5,11 @@ import Routes from './user/Routes';
 
 
 ReactDOM.render(
-  <Routes />,
+  <div>
+    <Routes />
+
+  </div>
+  ,
   document.getElementById('root')
 );
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import Layout from "./Layout"
-import { sentEmail } from './apiCore'
 import axios from "axios";
 
 

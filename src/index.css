@@ -1,3 +1,9 @@
+
+
+.filter-box{
+    padding-left: 50px;
+}
+
 /**
  * border radius
  */
@@ -79,7 +85,39 @@
      -moz-animation: Gradient 15s ease infinite;
      animation: Gradient 15s ease infinite;
  }
+
+ /* *********** shop page *********** */
+ .rbox{
+    padding-inline-start: 0px !important;
+}
+
+.searchBar{
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+ /* *********** product page *********** */
+ .productT{
+    margin-right: auto;
+    margin-left: auto;
+     width: 75%;
+
+}
+
+.test{
  
+   width:25%
+}
+
+.table td, .table th {
+
+ vertical-align: middle !important
+   
+}
+
+.pag{
+justify-content: center;
+}
  @-webkit-keyframes Gradient {
      0% {
          background-position: 0% 50%;

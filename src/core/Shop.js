@@ -26,6 +26,9 @@ const Shop = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [postPerPage] = useState(8)
 
+    //   ******** seachbar   *********
+    const [seachBarData, setSeachBarData] = useState("")
+
     const init = () => {
         getCategories()
             .then(data => {
@@ -87,36 +90,65 @@ const Shop = () => {
             })
     }
 
+    // filter with search bar 
+    const searchBarFilter = filteredResults.filter(product => {
+        return (
+
+            product.name
+                .toLowerCase()
+                .includes(seachBarData.toLowerCase()) +
+            product.description
+                .toLowerCase()
+                .includes(seachBarData.toLowerCase())
+            + product.category.name
+                .toLowerCase()
+                .includes(seachBarData.toLowerCase())
+        );
+    })
 
 
     // // get current post paginate
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
-    const currentPost = filteredResults.slice(indexOfFirstPost, indexOfLastPost);
+    const currentPost = searchBarFilter.slice(indexOfFirstPost, indexOfLastPost);
 
     // change page
     const paginate = pageNumer => {
         setCurrentPage(pageNumer)
     }
 
-
-    console.log(error)
-
     return (
         <Layout
 
             title="Product Page" description=" Ecomerce app" className="container-fluid"
         >
-            <div className="row">
+
+            <div>
+                <form className="searchBar">
+                    <label>
+                        <h3>Search:</h3>
+                    </label>
+                    <input
+                        className="form-control"
+                        name="searchbar"
+                        type="text"
+                        id="searchbar"
+                        value={seachBarData}
+                        onChange={e => setSeachBarData(e.target.value)}
+                    />
+                </form>
+            </div>
+
+            <div className="row filter-box">
                 <div className="col-3">
-                    <h4>Filter By Categories </h4>
+                    <h3>Filter By Categories </h3>
                     <ul>
                         <CheckBox categories={categories} handleFilters={filters =>
                             handleFilters(filters, 'category')} />
                     </ul>
 
-                    <h4>Filter By Price Range </h4>
-                    <ul>
+                    <h3>Filter By Price Range </h3>
+                    <ul className="rbox">
                         <RadioBox
                             prices={prices}
                             handleFilters={filters =>
@@ -126,7 +158,7 @@ const Shop = () => {
                         />
                     </ul>
                 </div>
-                <div className="col-7">
+                <div className="col-8">
                     <h2 className="mb-4">Products</h2>
                     <div className="row">
                         {currentPost.map((product, i) => (

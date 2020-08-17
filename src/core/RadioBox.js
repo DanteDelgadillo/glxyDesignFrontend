@@ -11,7 +11,7 @@ const RadioBox = ({ prices, handleFilters }) => {
 
 
     return prices.map((price, i) => (
-        <div key={i}>
+        <div key={i} >
             <input
                 onChange={handleChange}
                 value={`${price._id}`}
