@@ -107,7 +107,7 @@ const ManageProducts = () => {
 
                         {currentPost.map((p, i) => (
                             <tr key={i} >
-                                <td className="test">   <img src={`${API}/product/photo/${p._id}`} alt={p.name} style={{ height: "300px", width: "300px" }} /></td>
+                                <td className="tablesize">   <img src={`${API}/product/photo/${p._id}`} alt={p.name} style={{ height: "300px", width: "300px" }} /></td>
                                 <td> <h3 style={{ paddingLeft: "200px" }}>{p.name}</h3></td>
                                 <td><Link to={`/admin/product/update/${p._id}`}> <img src={Pen} className="images" alt="pen" /></Link></td>
                                 <td><button type="button" onClick={() => destroy(p._id)} className="btn "><img src={TrashCan} className="images" alt="trash" /></button></td>

@@ -4,6 +4,9 @@ import Menu from "./Menu"
 const Layout = ({ title = "Title", description = "Description", className, children }) => (
     <div>
         <Menu></Menu>
+        <hr />
+        <hr />
+        <hr />
         <div className="jumbotron">
             <h2>{title}</h2>
             <p className="lead">{description}</p>

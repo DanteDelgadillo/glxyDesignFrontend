@@ -104,7 +104,7 @@
 
 }
 
-.test{
+.tablesize{
  
    width:25%
 }
@@ -118,6 +118,26 @@
 .pag{
 justify-content: center;
 }
+
+/* *******nav BAr******* */
+.navAdjust{
+    padding-right: 18px;
+font-size: 20px;
+}
+
+.shadow{
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.400))
+}
+
+.shoppingCartImage{
+    height: 50px;
+    width: 50px;
+  }
+
+  .cartbutton{
+    background-color: rgba(143,106,255,1);
+    border-radius: 10px
+  }
  @-webkit-keyframes Gradient {
      0% {
          background-position: 0% 50%;
