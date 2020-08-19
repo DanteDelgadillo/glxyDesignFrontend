@@ -19,19 +19,15 @@ const Menu = ({ history }) => (
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
             <Link className="navbar-brand" style={isActive(history, '/')} to="/"><img src={Logo} className="images" alt="pen" /></Link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+                <ul class="navbar-nav  ">
+                    {/* **************************************************** */}
                     <li class="nav-item navAdjust">
                         <Link className="nav-link" style={isActive(history, '/shop')} to="/shop">Products</Link>
                     </li>
-
-                    {/* <li class="nav-item">
-                        <Link className="nav-link" style={isActive(history, '/about')} to="/about">About </Link>
-                    </li> */}
-
                     {isAuthenticated() && isAuthenticated().user.role === 0 && (
                         <li className=" nav-item navAdjust">
                             <Link className="nav-link" style={isActive(history, '/user/dashBoard')} to="/user/dashBoard">DashBoard</Link>
@@ -71,7 +67,9 @@ const Menu = ({ history }) => (
                             {itemTotal()}
                         </Link>
                     </li>
+
                 </ul>
+
             </div>
         </nav>
     </div>
