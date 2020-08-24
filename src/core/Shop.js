@@ -6,6 +6,7 @@ import CheckBox from './CheckBox'
 import RadioBox from './RadioBox'
 import { prices } from "./FixedPrices"
 import Pagination from "./Pagination"
+import Card2 from "./Card2"
 
 const Shop = () => {
     const [myFilters, setMyFilters] = useState({
@@ -139,14 +140,15 @@ const Shop = () => {
                 </form>
             </div>
 
-            <div className="row filter-box">
-                <div className="col-3">
+            <div className=" filter-box">
+                <div>
                     <h3>Filter By Categories </h3>
                     <ul>
                         <CheckBox categories={categories} handleFilters={filters =>
                             handleFilters(filters, 'category')} />
                     </ul>
-
+                </div>
+                <div>
                     <h3>Filter By Price Range </h3>
                     <ul className="rbox">
                         <RadioBox
@@ -158,25 +160,26 @@ const Shop = () => {
                         />
                     </ul>
                 </div>
-                <div className="col-8">
-                    <h2 className="mb-4">Products</h2>
-                    <div className="row">
-                        {currentPost.map((product, i) => (
-
-                            <div key={i} className="col-4 mb-3">
-                                <Card product={product}></Card>
-                            </div>
-
-                        ))}
-                    </div>
-                    <hr></hr>
-                    <Pagination
-                        postPerPage={postPerPage}
-                        totalPost={filteredResults.length}
-                        paginate={paginate}
-                    />
-                </div>
             </div>
+            <div >
+                <h2 className="mb-4">Products</h2>
+                <div className="homeContainer">
+                    {currentPost.map((product, i) => (
+
+                        <div key={i} className="">
+                            <Card2 product={product}></Card2>
+                        </div>
+
+                    ))}
+                </div>
+                <hr></hr>
+                <Pagination
+                    postPerPage={postPerPage}
+                    totalPost={filteredResults.length}
+                    paginate={paginate}
+                />
+            </div>
+
 
         </Layout>
     )

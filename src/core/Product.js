@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Layout from "./Layout"
 import { listRelated, read } from "./apiCore"
 import Card from "./Card"
+import Card2 from "./Card2"
 
 const Product = (props) => {
     const [product, setProduct] = useState([])

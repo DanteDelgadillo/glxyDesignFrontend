@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Layout from "./Layout"
 import { getProduct } from "./apiCore"
 import Card from "./Card"
+import Card2 from "./Card2"
 
 
 const Home = () => {
@@ -38,26 +39,31 @@ const Home = () => {
         loadProductsBySell();
     }, [])
 
-    return (<Layout title="Home Page" description="Node react Ecomerce app" className="container-fluid">
+    return (
+        <div>
+            <Layout title="Home Page" description="Node react Ecomerce app" className=""></Layout>
 
-        <h2 className="mb-4"> Best Sellers</h2>
-        <div className="row">
-            {productsBySell.map((product, i) => (
+            <h2 className="mb-4"> Best Sellers</h2>
+            <div className="homeContainer">
+                {productsBySell.map((product, i) => (
+                    <div key={i} >
+                        <Card2 product={product}></Card2>
+                    </div>
 
-                <div key={i} className="col-4 mb-3">
-                    <Card product={product}></Card>
-                </div>
+                ))}
+            </div>
 
-            ))}
+            <hr />
+            <hr />
+            <hr />
+
+            <h2 className="mb-4"> New Arrivals</h2>
+            <div className="homeContainer">
+                {productsByArrival.map((product, i) => (<div key={i} >
+                    <Card2 product={product}></Card2>
+                </div>))}
+            </div>
         </div>
-
-        <h2 className="mb-4"> New Arrivals</h2>
-        <div className='row'>
-            {productsByArrival.map((product, i) => (<div key={i} className="col-4 mb-3">
-                <Card product={product}></Card>
-            </div>))}
-        </div>
-    </Layout>
     )
 }
 

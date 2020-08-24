@@ -30,13 +30,13 @@ const Menu = ({ history }) => (
                     </li>
                     {isAuthenticated() && isAuthenticated().user.role === 0 && (
                         <li className=" nav-item navAdjust">
-                            <Link className="nav-link" style={isActive(history, '/user/dashBoard')} to="/user/dashBoard">DashBoard</Link>
+                            <Link className="nav-link" style={isActive(history, '/user/dashBoard')} to="/user/dashBoard">Account</Link>
                         </li>
                     )}
 
                     {isAuthenticated() && isAuthenticated().user.role === 1 && (
                         <li className=" nav-item navAdjust">
-                            <Link className="nav-link" style={isActive(history, '/admin/dashBoard')} to="/admin/dashBoard">DashBoard</Link>
+                            <Link className="nav-link" style={isActive(history, '/admin/dashBoard')} to="/admin/dashBoard">Account</Link>
                         </li>
                     )}
 
@@ -45,11 +45,6 @@ const Menu = ({ history }) => (
                             <li className=" nav-item navAdjust">
                                 <Link className="nav-link" style={isActive(history, '/signin')} to="/signin">Sign in</Link>
                             </li>
-
-                            <li className=" nav-item navAdjust">
-                                <Link className="nav-link" style={isActive(history, '/signup')} to="/signup">Sign up</Link>
-                            </li>
-
                         </Fragment>
                     )}
 

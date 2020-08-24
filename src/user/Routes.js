@@ -18,6 +18,8 @@ import ManageProducts from "../admin/ManageProducts"
 import UpdateProduct from "../admin/updateProduct"
 import About from "../core/About"
 
+import Footer from "../core/Footer"
+
 
 const Routes = () => {
     return (
@@ -41,6 +43,7 @@ const Routes = () => {
 
 
             </Switch>
+            <Footer />
         </BrowserRouter>
     )
 }

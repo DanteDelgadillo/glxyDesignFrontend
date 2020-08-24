@@ -53,14 +53,41 @@
  .black-5 {
      background: #b3b3b3;
  }
+ /**
+  * card
+  */
+
+.homeContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.top{
+    height: 600px;
+    width: 400px;
+    margin: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.200);
+  
+}
+.cardImage{
+height: 300px;
+width: 100%;
+object-fit:cover;
+}
+.cardClick{
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+.addToCart{
+    float: right;
+    margin-top: 60px;
+}
  
  /**
   * product image on card
   */
  
- .product-img {
-     min-height: 100px;
- }
+
  
  .jumbotron h2 {
      margin-top: -20px;
@@ -135,9 +162,64 @@ font-size: 20px;
   }
 
   .cartbutton{
-    background-color: rgba(143,106,255,1);
+    background-color: rgba(176,71,255,1);
     border-radius: 10px
   }
+
+  /* ************************ sign in ************* */
+.sign{
+    background-color: rgba(143,106,255,1);
+    color: white;
+    border-radius: 10px;
+    padding: 25px 75px 75px 75px;
+    width: 80%
+}
+ /* ************test******** */
+/* Footer legal */
+.ft-legal {
+    padding: 0.9375rem 1.875rem;
+    background-color: white;
+    
+   
+  }
+  .ft-legal-list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center
+  }
+  .ft-legal-list li {
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+   
+  }
+  /* one before the last child */
+  /* .ft-legal-list li {
+
+      
+  } */
+
+  footer {
+    background-color: #555;
+    color: #bbb;
+    line-height: 1;
+  box-shadow: 0px -4px 3px rgba(0, 0, 0, 0.200);
+  }
+
+  .fontF{
+    color: rgba(143,106,255,1) !important;
+  }
+.icons{
+   font-size: 36px;
+   color: #000
+}
+  .eIcons{
+    font-size: 28px;
+    color: #000  
+  }
+
  @-webkit-keyframes Gradient {
      0% {
          background-position: 0% 50%;

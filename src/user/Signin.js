@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import Layout from "../core/Layout"
 import { signin, authenticate, isAuthenticated } from "../auth/index"
+import { Link } from "react-router-dom"
 
 const Signin = () => {
     const [userValues, setUserValues] = useState({
@@ -42,17 +43,29 @@ const Signin = () => {
     }
 
     const signUpForm = () => (
-        <form>
+        <div className="container sign">
+            <form>
+                <center>
+                    <h2>Sign In</h2>
+                </center>
+                <div className="form-group">
+                    <label className="text">Email:</label>
+                    <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
+                </div>
+                <div className="form-group">
+                    <label className="text">Password:</label>
+                    <input onChange={handleChange("password")} type="Password" className="form-control" value={password}></input>
+                </div>
+            </form>
+            <button onClick={clickSubmit} className="btn btn-light pull-right">Submit</button>
+            <hr />
             <div className="form-group">
-                <label className="text-muted">Email:</label>
-                <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
+                <label className="text">Don't have a account?</label>
+
+
             </div>
-            <div className="form-group">
-                <label className="text-muted">Password:</label>
-                <input onChange={handleChange("password")} type="Password" className="form-control" value={password}></input>
-            </div>
-            <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
-        </form>
+            <Link className="btn btn-light" to="/signup">Sign Up</Link>
+        </div>
     )
 
     const showError = () => (
