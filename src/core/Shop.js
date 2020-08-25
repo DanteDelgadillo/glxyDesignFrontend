@@ -119,10 +119,11 @@ const Shop = () => {
     }
 
     return (
-        <Layout
+        <div>
+            <Layout
 
-            title="Product Page" description=" Ecomerce app" className="container-fluid"
-        >
+                title="Product Page" description=" Ecomerce app" className="container-fluid"
+            >   </Layout>
 
             <div>
                 <form className="searchBar">
@@ -140,13 +141,14 @@ const Shop = () => {
                 </form>
             </div>
 
-            <div className=" filter-box">
+            <div class="searcContainer">
                 <div>
                     <h3>Filter By Categories </h3>
                     <ul>
                         <CheckBox categories={categories} handleFilters={filters =>
                             handleFilters(filters, 'category')} />
                     </ul>
+
                 </div>
                 <div>
                     <h3>Filter By Price Range </h3>
@@ -160,9 +162,11 @@ const Shop = () => {
                         />
                     </ul>
                 </div>
+
             </div>
+
             <div >
-                <h2 className="mb-4">Products</h2>
+                <h2 className="pName">Products:</h2>
                 <div className="homeContainer">
                     {currentPost.map((product, i) => (
 
@@ -180,8 +184,8 @@ const Shop = () => {
                 />
             </div>
 
+        </div>
 
-        </Layout>
     )
 }
 

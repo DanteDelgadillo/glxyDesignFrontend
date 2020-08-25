@@ -56,11 +56,12 @@ const Signin = () => {
                     <label className="text">Password:</label>
                     <input onChange={handleChange("password")} type="Password" className="form-control" value={password}></input>
                 </div>
+                <button onClick={clickSubmit} className="btn btn-light pull-right">Submit</button>
             </form>
-            <button onClick={clickSubmit} className="btn btn-light pull-right">Submit</button>
-            <hr />
+
+
             <div className="form-group">
-                <label className="text">Don't have a account?</label>
+                <label style={{ fontSize: "12px" }} className="text">Don't have a account?</label>
 
 
             </div>
@@ -95,12 +96,13 @@ const Signin = () => {
 
 
     return (
-        <Layout title="Sign-In" description="Login Account to shop with us !" className="container col-md-8 offset-md-2">
+        <div>
+            <Layout title="Sign-In" description="Login Account to shop with us !" className="container col-md-8 offset-md-2">    </Layout>
             {showLoading()}
             {showError()}
             {signUpForm()}
             {redirectUser()}
-        </Layout>
+        </div>
     );
 };
 

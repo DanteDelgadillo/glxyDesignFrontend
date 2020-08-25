@@ -43,7 +43,7 @@ const Home = () => {
         <div>
             <Layout title="Home Page" description="Node react Ecomerce app" className=""></Layout>
 
-            <h2 className="mb-4"> Best Sellers</h2>
+            <h2 className="pName"> Best Sellers:</h2>
             <div className="homeContainer">
                 {productsBySell.map((product, i) => (
                     <div key={i} >
@@ -57,7 +57,7 @@ const Home = () => {
             <hr />
             <hr />
 
-            <h2 className="mb-4"> New Arrivals</h2>
+            <h2 className="pName"> New Arrivals:</h2>
             <div className="homeContainer">
                 {productsByArrival.map((product, i) => (<div key={i} >
                     <Card2 product={product}></Card2>
