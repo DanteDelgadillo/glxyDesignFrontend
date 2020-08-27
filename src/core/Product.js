@@ -55,7 +55,7 @@ const Product = (props) => {
             <div className="homeContainer">
                 <div >
                     {realtedProduct.map((p, i) => (
-                        <div className="mb-3">
+                        <div >
                             <Card2 key-={i} product={p}></Card2>
                         </div>
                     ))}

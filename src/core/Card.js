@@ -46,7 +46,7 @@ const Card = ({ product,
     const showAddToCart = (showAddToCartButton) => {
         return (
             showAddToCartButton && (
-                <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2">
+                <button onClick={addToCart} className="btn cartbutton   mt-2 mb-2">
                     Add to Cart
         </button>
             ))
@@ -96,12 +96,15 @@ const Card = ({ product,
             </div>
             <div className="productDiv productInfo">
                 <center>
-                    <h5>
+                    <h2>
                         {product.name}
-                    </h5>
+                    </h2>
                 </center>
-                <div >{product.description.substring(0, 75)}</div>
+                <div><h5>Description:</h5></div>
+                <div > {product.description.substring(0, 75)}</div>
+                <div><h5>Price:</h5></div>
                 <div >Price: $ {product.price}</div>
+                <div><h5>Categry:</h5></div>
                 <div >Categry: {product.category && product.category.name}</div>
                 <div > Added on {moment(product.createdAt).fromNow()}</div>
 

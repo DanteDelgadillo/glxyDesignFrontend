@@ -46,6 +46,11 @@ body{
     
  } 
 
+ .ProductImage{
+ width: 500px ;
+    height: 500px ;
+ }
+
  .productDiv{
     width: 500px ;
     height: 500px ;
@@ -53,7 +58,7 @@ body{
 
  .productInfo{
 padding: 40px 40px 40px 80px;
-margin-top: 150px
+margin-top: 75px
  }
  /**
   * card
@@ -62,7 +67,15 @@ margin-top: 150px
 .homeContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .homeContainer {
+        width: 100%;
+        justify-content: center;
+    }
 }
 .top{
     width: 400px;
