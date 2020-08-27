@@ -101,14 +101,14 @@ const Card = ({ product,
                     </h2>
                 </center>
                 <div><h5>Description:</h5></div>
-                <div > {product.description.substring(0, 75)}</div>
+                <div className="inputDescription"> {product.description.substring(0, 75)}</div>
                 <div><h5>Price:</h5></div>
-                <div >Price: $ {product.price}</div>
+                <div className="inputDescription">Price: $ {product.price}</div>
                 <div><h5>Categry:</h5></div>
-                <div >Categry: {product.category && product.category.name}</div>
-                <div > Added on {moment(product.createdAt).fromNow()}</div>
+                <div className="inputDescription">{product.category && product.category.name}</div>
 
                 <div className="addToCart">
+                    <div > Added on {moment(product.createdAt).fromNow()}</div>
                     {showStock(product.quantity)}
 
                     <br />
