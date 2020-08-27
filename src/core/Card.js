@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, Redirect } from "react-router-dom"
-import ShowImage from "./ShowImage"
+import ProductImage from "./ProductImage"
 import moment from 'moment'
 import { addItem, updateItems, removeItem } from "./CartHelper"
 
@@ -90,24 +90,33 @@ const Card = ({ product,
 
 
     return (
+        <div className="productContainer">
+            <div className="productDiv">
+                <ProductImage item={product} url="product" />
+            </div>
+            <div className="productDiv productInfo">
+                <center>
+                    <h5>
+                        {product.name}
+                    </h5>
+                </center>
+                <div >{product.description.substring(0, 75)}</div>
+                <div >Price: $ {product.price}</div>
+                <div >Categry: {product.category && product.category.name}</div>
+                <div > Added on {moment(product.createdAt).fromNow()}</div>
 
-        <div className="card">
-            <div className="card-header name">{product.name}</div>
-            <div className="card-body">
-                {shouldRedirct(redirct)}
-                <ShowImage item={product} url="product" />
-                <p className="lead mt-2">{product.description.substring(0, 75)}</p>
-                <p className="black-10">$ {product.price}</p>
-                <p className="black-9">Categry: {product.category && product.category.name}</p>
-                <p className="black-8"> Added on {moment(product.createdAt).fromNow()}</p>
-                {showStock(product.quantity)}
-                <br />
-                {showButton(showViewProductButton)}
-                {showAddToCart(showAddToCartButton)}
+                <div className="addToCart">
+                    {showStock(product.quantity)}
+
+                    <br />
+
+                    {showAddToCart(showAddToCartButton)}
+                </div>
                 {showRemoveButton(showRemoveProductButton)}
                 {showCartUpdate(cartUpdate)}
             </div>
         </div>
+
 
     )
 

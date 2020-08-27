@@ -75,14 +75,12 @@ const Card2 = ({ product,
 
 
     return (
-
-
-        <div className="top">
+        <div className="card top">
+            {shouldRedirct(redirct)}
+            <Link className="cardClick" to={`/product/${product._id}`}>
+                <ShowImage item={product} url="product" />
+            </Link>
             <div className="card-body">
-                {shouldRedirct(redirct)}
-                <Link className="cardClick" to={`/product/${product._id}`}>
-                    <ShowImage item={product} url="product" />
-                </Link>
                 <center>
                     <h5>
                         {product.name}
