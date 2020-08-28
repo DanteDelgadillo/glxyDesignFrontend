@@ -41,8 +41,8 @@ body{
  .productContainer{
     display: flex;
     flex-flow: row wrap;
+    padding: 10px;
     justify-content: center;
-    
     
  } 
 
@@ -66,8 +66,14 @@ body{
 
  .productInfo{
 padding: 40px 40px 40px 40px;
-margin-top: 75px
+margin-left: 20px;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.200);
  }
+ @media only screen and (max-width: 1020px) {
+    .productInfo {
+        margin-left: 0px;
+    }
+}
 
  @media only screen and (max-width: 500px) {
     .productInfo {

@@ -70,21 +70,17 @@ const DashBoard = () => {
                             return (
                                 <div key={i}>
                                     <hr />
-                                    {h.products.map((p, i) => {
-                                        return (
-                                            <div key={i}>
-                                                <div className="product-img">
-                                                    <img src={`${API}/product/photo/${p._id}`} alt={p.name} className="mb-3" style={{ maxHeight: "100%", maxWidth: "100%" }} />
-                                                </div>
-                                                <h6>Product name: {p.name}</h6>
-                                                <h6>Product price: ${p.price}</h6>
-                                                <h6>
-                                                    Purchased date:{" "}
-                                                    {moment(p.createdAt).fromNow()}
-                                                </h6>
-                                            </div>
-                                        );
-                                    })}
+                                    <center>
+                                        <h3>Order Number: {h._id}</h3>
+                                        {console.log(h)}
+                                    </center>
+                                    <h6>Tracking:</h6>
+                                    <h6>Number of Products: {h.products.length}</h6>
+                                    <h6>Status: {h.status}</h6>
+                                    <h6>
+                                        Purchased date:{" "}
+                                        {moment(h.createdAt).format('MM/DD/YYYY')}
+                                    </h6>
                                 </div>
                             );
                         })}
