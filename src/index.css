@@ -68,6 +68,12 @@ body{
 padding: 40px 40px 40px 40px;
 margin-top: 75px
  }
+
+ @media only screen and (max-width: 500px) {
+    .productInfo {
+        margin-top: -200px;
+    }
+}
  /**
   * card
   */
@@ -243,6 +249,18 @@ font-size: 20px;
     }
 }
 
+/* **********admin page********** */
+.adminContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.adminContainer > div{
+    margin: 10px;
+    width: 500px
+}
+
  /* ************test******** */
 /* Footer legal */
 .ft-legal {
@@ -257,7 +275,8 @@ font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    justify-content: center
+    justify-content: center;
+    padding: 0px;
   }
   .ft-legal-list li {
     margin: 0.125rem 0.625rem;

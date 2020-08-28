@@ -10,7 +10,7 @@ const AdminDashBoard = () => {
     const adminLinks = () => {
         return (
             <div className="card">
-                <h4 className="card-header">Admin Links</h4>
+                <h4 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>Admin Links</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
                         <Link to="/create/category" className="nav-link">Create category</Link>
@@ -32,7 +32,7 @@ const AdminDashBoard = () => {
     const adminInfo = () => {
         return (
             <div className="card mb-5">
-                <h3 className="card-header">User Information</h3>
+                <h3 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>User Information</h3>
                 <ul className="list-group">
                     <li className="list-group-item">{name}</li>
                     <li className="list-group-item">{email}</li>
@@ -45,18 +45,18 @@ const AdminDashBoard = () => {
 
 
     return (
-
-        <Layout title="DashBoard" description={`GoodDay! ${name}!`} className="container">
-            <div className="row">
-                <div className="col-3">
+        <div>
+            <Layout title="DashBoard" description={`GoodDay! ${name}!`} className="container">       </Layout>
+            <div className="adminContainer">
+                <div >
                     {adminLinks()}
                 </div>
-                <div className="col-9">
+                <div >
                     {adminInfo()}
                 </div>
             </div>
+        </div>
 
-        </Layout>
     )
 }
 

@@ -53,7 +53,7 @@ const Card = ({ product,
     }
 
     const showStock = (quantity) => {
-        return (quantity > 0 ? <span className="badge badge-primary badge-pill">In Stock</span> : <span badge badge-primary badge-pill>Out of Stock</span>
+        return (quantity > 0 ? <span className="badge badge-primary badge-pill">In Stock {quantity}</span> : <span badge badge-primary badge-pill>Out of Stock</span>
 
         )
     }

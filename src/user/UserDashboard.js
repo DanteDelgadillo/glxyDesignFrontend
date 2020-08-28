@@ -34,7 +34,7 @@ const DashBoard = () => {
     const userLinks = () => {
         return (
             <div className="card">
-                <h4 className="card-header">User Links</h4>
+                <h4 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>User Links</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
                         <Link to="/cart" className="nav-link">My Cart</Link>
@@ -50,7 +50,7 @@ const DashBoard = () => {
     const userInfo = () => {
         return (
             <div className="card mb-5">
-                <h3 className="card-header">User Information</h3>
+                <h3 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>User Information</h3>
                 <ul className="list-group">
                     <li className="list-group-item">{name}</li>
                     <li className="list-group-item">{email}</li>
@@ -63,7 +63,7 @@ const DashBoard = () => {
     const purchaseHistory = history => {
         return (
             <div className="card mb-5">
-                <h3 className="card-header">Purchase history</h3>
+                <h3 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>Purchase history</h3>
                 <ul className="list-group">
                     <li className="list-group-item">
                         {history.map((h, i) => {
@@ -97,16 +97,16 @@ const DashBoard = () => {
     return (
 
         <Layout title="DashBoard" description={`GoodDay! ${name}!`} className="container">
-            <div className="row">
-                <div className="col-3">
+            <div className="adminContainer">
+                <div >
                     {userLinks()}
                 </div>
-                <div className="col-9">
+                <div >
                     {userInfo()}
-                    {purchaseHistory(history)}
+
                 </div>
             </div>
-
+            {purchaseHistory(history)}
         </Layout>
     )
 }
