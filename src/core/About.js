@@ -189,7 +189,7 @@ const About = (props) => {
                         <br></br>
                         <div className="">
                             <button
-                                className="btn btn-primary"
+                                className="btn btn-light pull-right"
                                 onClick={onClick}
                             >
                                 Submit

@@ -89,7 +89,7 @@ const Card2 = ({ product,
                 <div >{product.description.substring(0, 75)}</div>
                 <div >$ {product.price}</div>
                 <div >Categry: {product.category && product.category.name}</div>
-                <div > Added on {moment(product.createdAt).fromNow()}</div>
+                <div className="text-muted"> Added on {moment(product.createdAt).fromNow()}</div>
 
                 <div className="addToCart">
                     {showStock(product.quantity)}

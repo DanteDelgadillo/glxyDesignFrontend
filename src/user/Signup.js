@@ -42,19 +42,22 @@ const Signup = () => {
 
     const signUpForm = () => (
         <form>
+            <center>
+                <h2>Sign Up:</h2>
+            </center>
             <div className="form-group">
-                <label className="text-muted">Name:</label>
+                <label >Name:</label>
                 <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
             </div>
             <div className="form-group">
-                <label className="text-muted">Email:</label>
+                <label >Email:</label>
                 <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
             </div>
             <div className="form-group">
-                <label className="text-muted">Password:</label>
+                <label >Password:</label>
                 <input onChange={handleChange("password")} type="Password" className="form-control" value={password}></input>
             </div>
-            <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
+            <button onClick={clickSubmit} className="btn btn-light pull-right">Submit</button>
         </form>
     )
 
@@ -71,11 +74,12 @@ const Signup = () => {
     )
 
     return (
-        <Layout title="Sign-Up" description="Create a Account to shop with us !" className="container col-md-8 offset-md-2">
+        <div className='container sign'>
+
             {showSuccess()}
             {showError()}
             {signUpForm()}
-        </Layout>
+        </div >
     );
 };
 

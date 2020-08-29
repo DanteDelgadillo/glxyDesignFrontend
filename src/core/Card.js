@@ -107,8 +107,8 @@ const Card = ({ product,
                 <div><h5>Categry:</h5></div>
                 <div className="inputDescription">{product.category && product.category.name}</div>
 
-                <div className="addToCart">
-                    <div > Added on {moment(product.createdAt).fromNow()}</div>
+                <div className="addToCart ">
+                    <div className="text-muted"> Added on {moment(product.createdAt).fromNow()}</div>
                     {showStock(product.quantity)}
 
                     <br />

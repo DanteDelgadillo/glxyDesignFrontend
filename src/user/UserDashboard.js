@@ -33,7 +33,7 @@ const DashBoard = () => {
     const userLinks = () => {
         return (
             <div className="card">
-                <h4 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>User Links</h4>
+                <h4 className="card-header" style={{ backgroundColor: "rgba(143,106,255,1)", color: "white" }}>User Links</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
                         <Link to="/cart" className="nav-link">My Cart</Link>
@@ -49,7 +49,7 @@ const DashBoard = () => {
     const userInfo = () => {
         return (
             <div className="card mb-5">
-                <h3 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>User Information</h3>
+                <h3 className="card-header" style={{ backgroundColor: "rgba(143,106,255,1)", color: "white" }}>User Information</h3>
                 <ul className="list-group">
                     <li className="list-group-item">{name}</li>
                     <li className="list-group-item">{email}</li>
@@ -62,7 +62,7 @@ const DashBoard = () => {
     const purchaseHistory = history => {
         return (
             <div className="card mb-5">
-                <h3 className="card-header" style={{ backgroundColor: "#b047ff", color: "white" }}>Purchase history</h3>
+                <h3 className="card-header" style={{ backgroundColor: "rgba(143,106,255,1)", color: "white" }}>Purchase history</h3>
                 <ul className="list-group">
                     <li className="list-group-item">
                         {history.map((h, i) => {
