@@ -120,11 +120,6 @@ const Shop = () => {
 
     return (
         <div>
-            <Layout
-
-                title="Product Page" description=" Ecomerce app" className="container-fluid"
-            >   </Layout>
-
             <div>
                 <form className="searchBar">
                     <label>

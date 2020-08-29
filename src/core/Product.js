@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Layout from "./Layout"
 import { listRelated, read } from "./apiCore"
 import Card from "./Card"
 import Card2 from "./Card2"
@@ -39,10 +38,7 @@ const Product = (props) => {
 
     return (
         <div>
-            <Layout title={product && product.name}
-                description=
-                {product && product.description && product.description.substring(0, 100)}
-                className="container-fluid"> </Layout>
+
 
             <div >
 

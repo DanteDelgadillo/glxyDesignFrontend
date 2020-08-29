@@ -43,6 +43,7 @@ body{
     flex-flow: row wrap;
     padding: 10px;
     justify-content: center;
+    margin-top: 50px;
     
  } 
 
@@ -177,6 +178,7 @@ object-fit:cover;
     width: 75%;
     margin: 0 auto;
     padding-bottom: 25px;
+    margin-top: 50px;
 }
 
 .searcContainer {
@@ -236,7 +238,8 @@ font-size: 20px;
 
   .cartbutton{
     background-color: rgba(176,71,255,1);
-    border-radius: 10px
+    border-radius: 10px;
+    color: white;
   }
 
   /* ************************ sign in ************* */
@@ -245,7 +248,8 @@ font-size: 20px;
     color: white;
     border-radius: 10px;
     padding: 25px 75px 75px 75px;
-    width: 40%
+    width: 40%;
+    margin-top: 50px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -260,6 +264,7 @@ font-size: 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .adminContainer > div{

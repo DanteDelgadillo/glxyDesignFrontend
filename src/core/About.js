@@ -108,13 +108,10 @@ const About = (props) => {
 
 
     return (
-        <Layout title="Contact Us"
-            description=""
-            className="container-fluid">
-
+        <div  >
             {/* ******************* Contact me Form*********** */}
             <div className="flexForm">
-                <div className="container" >
+                <div className="container sign" >
                     <h2>Questions? email us here:</h2>
                     <div className=" row">
                         <div className="col">
@@ -202,7 +199,8 @@ const About = (props) => {
                     </div>
                 </div>
             </div>
-        </Layout>
+
+        </div>
     )
 }
 

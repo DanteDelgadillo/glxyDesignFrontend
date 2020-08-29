@@ -17,13 +17,16 @@ import Profile from "../user/Profile"
 import ManageProducts from "../admin/ManageProducts"
 import UpdateProduct from "../admin/updateProduct"
 import About from "../core/About"
+import PurchaseOrder from "../core/PurchaseOrder"
 
+import Menu from "../core/Menu";
 import Footer from "../core/Footer"
 
 
 const Routes = () => {
     return (
         <BrowserRouter>
+            <Menu />
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/signin" exact component={Signin} />
@@ -34,6 +37,7 @@ const Routes = () => {
                 <Route path="/about" exact component={About} />
                 <PrivateRoute path="/user/dashBoard" exact component={DashBoard} />
                 <PrivateRoute path="/profile/:userId" exact component={Profile} />
+                <PrivateRoute path="/purchaseOrder/:userId" exact component={PurchaseOrder} />
                 <AdminRoute path="/admin/dashBoard" exact component={AdminDashboard} />
                 <AdminRoute path="/create/category" exact component={AddCategory} />
                 <AdminRoute path="/create/product" exact component={AddProduct} />

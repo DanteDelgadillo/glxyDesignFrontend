@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Layout from "../core/Layout"
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { getPurchaseHistory } from "./apiUser"
@@ -71,8 +70,10 @@ const DashBoard = () => {
                                 <div key={i}>
                                     <hr />
                                     <center>
-                                        <h3>Order Number: {h._id}</h3>
-                                        {console.log(h)}
+                                        <Link to={`/purchaseOrder/${h._id}`} >
+                                            <h3>Order Number: {h._id}</h3>
+                                            {console.log(h)}
+                                        </Link>
                                     </center>
                                     <h6>Tracking:</h6>
                                     <h6>Number of Products: {h.products.length}</h6>
@@ -92,7 +93,7 @@ const DashBoard = () => {
 
     return (
 
-        <Layout title="DashBoard" description={`GoodDay! ${name}!`} className="container">
+        <div className="container">
             <div className="adminContainer">
                 <div >
                     {userLinks()}
@@ -103,7 +104,7 @@ const DashBoard = () => {
                 </div>
             </div>
             {purchaseHistory(history)}
-        </Layout>
+        </div>
     )
 }
 

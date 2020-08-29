@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
-import Layout from "../core/Layout"
+
 import { signin, authenticate, isAuthenticated } from "../auth/index"
 import { Link } from "react-router-dom"
 
@@ -97,7 +97,6 @@ const Signin = () => {
 
     return (
         <div>
-            <Layout title="Sign-In" description="Login Account to shop with us !" className="container col-md-8 offset-md-2">    </Layout>
             {showLoading()}
             {showError()}
             {signUpForm()}
