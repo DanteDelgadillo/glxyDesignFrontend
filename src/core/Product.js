@@ -11,7 +11,7 @@ const Product = (props) => {
     const loadSingalProduct = productId => {
         read(productId)
             .then(data => {
-                if (data) {
+                if (data.error) {
                     setError(data.error)
                 } else {
                     setProduct(data)
