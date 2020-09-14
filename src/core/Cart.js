@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import Layout from "./Layout"
+
 import Card2 from "./Card2"
 import { getCart } from './CartHelper'
 import CheckOut from "./CheckOut"
@@ -37,21 +37,21 @@ const Cart = () => {
 
 
     return (
-        <Layout title="Shopping Cart" description="Manage your Cart" className="container-fluid">
-            <div className="row">
-                <div className="col-6">
-                    {items.length > 0 ? showItems(items) : noItemsMessage()}
-                </div>
-                <div className="col-6">
-                    <h2 className="mb-4">
-                        Your cart Summary
-                  </h2>
-                    <hr />
-                    <CheckOut setRun={setRun} products={items} />
-                </div>
 
+        <div className="row">
+            <div className="col-6">
+                {items.length > 0 ? showItems(items) : noItemsMessage()}
             </div>
-        </Layout>
+            <div className="col-6">
+                <h2 className="mb-4">
+                    Your cart Summary
+                  </h2>
+                <hr />
+                <CheckOut setRun={setRun} products={items} />
+            </div>
+
+        </div>
+
     )
 }
 

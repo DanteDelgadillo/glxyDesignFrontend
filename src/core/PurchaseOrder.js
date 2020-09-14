@@ -35,13 +35,11 @@ const PurchaseOrder = (props) => {
 
     }, [props])
     return (
-        <Layout title="PurchaseOrder"
-            description=""
-            className="PurchaseOrder">
-            <h1>{JSON.stringify(purchaseData)}</h1>
+
+        <h1>{JSON.stringify(purchaseData)}</h1>
 
 
-        </Layout>
+
     )
 }
 

@@ -53,9 +53,7 @@ const Home = () => {
                 ))}
             </div>
 
-            <hr />
-            <hr />
-            <hr />
+
 
             <h2 className="pName"> New Arrivals:</h2>
             <div className="homeContainer">
