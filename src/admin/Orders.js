@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from "../core/Layout"
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { listOrders, getStatusValues, updateOrderStatus } from "./apiAdmin"
@@ -83,62 +82,62 @@ const Orders = () => {
     )
 
     return (
-        <Layout title="Orders" description="Manage Orders Here" >
-            <div className="row">
-                <div className="col-md-8 offset-md-2">
-                    {showOrdersLength()}
 
-                    {orders.map((o, i) => {
-                        return (
-                            <div className="mt-5" key={i} style={{ borderBottom: '5px solid indigo' }}>
-                                <h2 className="mb-5">
-                                    <span className="bg-primary">Order Id: {o._id}</span>
-                                </h2>
+        <div className="row">
+            <div className="col-md-8 offset-md-2">
+                {showOrdersLength()}
 
-                                <ul className="list-group mb-2">
-                                    <li className="list-group-item">
-                                        {showStatus(o)}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Transaction Id: {o.transaction_id}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Amount: ${o.amount}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Ordered by: {o.user.name}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Ordered on:  {moment(o.createdAt).fromNow()}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Delivery address:  {o.address}
-                                    </li>
-                                </ul>
+                {orders.map((o, i) => {
+                    return (
+                        <div className="mt-5" key={i} style={{ borderBottom: '5px solid indigo' }}>
+                            <h2 className="mb-5">
+                                <span className="bg-primary">Order Id: {o._id}</span>
+                            </h2>
 
-                                <h3 className="mt-4 mb-4 front-italic">
-                                    Total products in the order: {o.products.length}
-                                </h3>
+                            <ul className="list-group mb-2">
+                                <li className="list-group-item">
+                                    {showStatus(o)}
+                                </li>
+                                <li className="list-group-item">
+                                    Transaction Id: {o.transaction_id}
+                                </li>
+                                <li className="list-group-item">
+                                    Amount: ${o.amount}
+                                </li>
+                                <li className="list-group-item">
+                                    Ordered by: {o.user.name}
+                                </li>
+                                <li className="list-group-item">
+                                    Ordered on:  {moment(o.createdAt).fromNow()}
+                                </li>
+                                <li className="list-group-item">
+                                    Delivery address:  {o.address}
+                                </li>
+                            </ul>
 
-                                {o.products.map((product, i) => (
-                                    <div className="mb-4" key={i} style={{ padding: "20px", border: "1px solid indigo" }}>
-                                        {showInput('Product name', product.name)}
-                                        {showInput('Product price', product.price)}
-                                        {showInput('Product total', product.count)}
-                                        {showInput('Product Id', product._id)}
+                            <h3 className="mt-4 mb-4 front-italic">
+                                Total products in the order: {o.products.length}
+                            </h3>
 
-                                    </div>
-                                ))}
+                            {o.products.map((product, i) => (
+                                <div className="mb-4" key={i} style={{ padding: "20px", border: "1px solid indigo" }}>
+                                    {showInput('Product name', product.name)}
+                                    {showInput('Product price', product.price)}
+                                    {showInput('Product total', product.count)}
+                                    {showInput('Product Id', product._id)}
 
-                            </div>
-                        )
-                    })}
+                                </div>
+                            ))}
 
-                </div>
+                        </div>
+                    )
+                })}
 
             </div>
 
-        </Layout>
+        </div>
+
+
     )
 
 

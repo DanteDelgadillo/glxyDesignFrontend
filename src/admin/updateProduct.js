@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from "../core/Layout"
 import { isAuthenticated } from "../auth";
 import { Link, Redirect } from "react-router-dom";
 import { getProduct, getCategories, updateProduct } from "./apiAdmin"
@@ -192,19 +191,19 @@ const UpdateProduct = ({ match }) => {
     }
 
     return (
-        <Layout title="Update Product" description="Update Product" >
-            <div className="row">
-                <div className="col-md-8 offset-md-2">
-                    {showLoading()}
-                    {showSuccess()}
-                    {showError()}
-                    {newPostForm()}
-                    {redirectUser()}
-                </div>
 
+        <div className="row">
+            <div className="col-md-8 offset-md-2">
+                {showLoading()}
+                {showSuccess()}
+                {showError()}
+                {newPostForm()}
+                {redirectUser()}
             </div>
 
-        </Layout>
+        </div>
+
+
     )
 }
 

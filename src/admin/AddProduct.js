@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from "../core/Layout"
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { CreateProduct, getCategories } from "./apiAdmin"
@@ -161,18 +160,18 @@ const AddProduct = () => {
     )
 
     return (
-        <Layout title="Add New Product" description="Lets Create a new Product" >
-            <div className="row">
-                <div className="col-md-8 offset-md-2">
-                    {showLoading()}
-                    {showSuccess()}
-                    {showError()}
-                    {newPostForm()}
-                </div>
 
+        <div className="row">
+            <div className="col-md-8 offset-md-2">
+                {showLoading()}
+                {showSuccess()}
+                {showError()}
+                {newPostForm()}
             </div>
 
-        </Layout>
+        </div>
+
+
     )
 }
 
