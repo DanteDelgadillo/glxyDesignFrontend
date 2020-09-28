@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Layout from "./Layout"
 import { getProduct } from "./apiCore"
-import Card from "./Card"
 import Card2 from "./Card2"
 
 

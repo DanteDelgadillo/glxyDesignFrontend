@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Layout from "./Layout"
 import { getCategories, list } from "./apiCore"
 import Card from "./Card"
 
