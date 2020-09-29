@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import Layout from "./Layout"
 import axios from "axios";
 
 
@@ -185,18 +184,18 @@ const About = (props) => {
                             </section>
                         </div>
                     </div>
-                    <div className="show-grid ">
-                        <br></br>
-                        <div className="">
-                            <button
-                                className="btn btn-light pull-right"
-                                onClick={onClick}
-                            >
-                                Submit
+
+                    <br></br>
+                    <div className="float-right">
+                        <button
+                            className="btn btn-light "
+                            onClick={onClick}
+                        >
+                            Submit
 
                             </button >
-                        </div>
                     </div>
+
                 </div>
             </div>
 

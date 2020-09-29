@@ -9,7 +9,7 @@ import moment from 'moment'
 const PurchaseOrder = (props) => {
     const [purchaseData, setPurchaseData] = useState([])
     const [error, setError] = useState(false)
-    const [stuff, setStuff] = useState([])
+    const [productList, setProductList] = useState([])
 
     const { user: { _id, name, email, } } = isAuthenticated();
     const token = isAuthenticated().token
@@ -23,7 +23,7 @@ const PurchaseOrder = (props) => {
                     console.log(data.error)
                 } else {
                     setPurchaseData(data)
-                    setStuff(data.products)
+                    setProductList(data.products)
                 }
             })
     }
@@ -36,11 +36,9 @@ const PurchaseOrder = (props) => {
 
     }, [props,])
 
-    const test = stuff => {
+    const test = productList => {
         return (
-
-            <div className="table-responsive">
-
+            <div className="table-responsive pTable">
                 <table className="table productT">
                     <tbody>
                         <tr className="">
@@ -49,29 +47,25 @@ const PurchaseOrder = (props) => {
                             <th>Quantity</th>
                             <th>Price</th>
                         </tr>
-
-                        {stuff.map((p, i) => (
+                        {productList.map((p, i) => (
 
                             <tr key={i}>
                                 <td>{p.name}</td>
                                 <td>{p.name}</td>
-                                <td>{p.name}</td>
-                                <td>{p.name}</td>
+                                <td>X {p.count}</td>
+                                <td>${p.price}</td>
                             </tr>
 
                         ))}
-
-
                     </tbody>
                 </table>
             </div>
-
         )
     }
 
     return (
         <div>
-
+            {console.log(productList)}
             <center>
                 <div className="order">Order#: {purchaseData._id}</div>
                 <span className="orderDate">Date Ordered: {moment(purchaseData.createdAt).format('MM/DD/YYYY')}</span>
@@ -99,7 +93,7 @@ const PurchaseOrder = (props) => {
             </div>
 
             {/* table */}
-            {test(stuff)}
+            {test(productList)}
 
         </div>
 

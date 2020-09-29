@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Link, Redirect } from "react-router-dom"
 import ProductImage from "./ProductImage"
 import moment from 'moment'
 import { addItem, updateItems, removeItem } from "./CartHelper"
@@ -15,19 +14,6 @@ const Card = ({ product,
     const [redirct, setRedirct] = useState(false)
     const [count, setCount] = useState(product.count)
 
-    const showButton = (showViewProductButton) => {
-        return (
-            showViewProductButton && (
-
-                <Link className="mr-2" to={`/product/${product._id}`}>
-                    <button className="btn btn-outline-primary mt-2 mb-t">
-                        view Product
-                </button>
-                </Link>
-            )
-        )
-    }
-
 
 
 
@@ -37,11 +23,7 @@ const Card = ({ product,
         })
     }
 
-    const shouldRedirct = redirct => {
-        if (redirct) {
-            return <Redirect to="cart" />
-        }
-    }
+
 
     const showAddToCart = (showAddToCartButton) => {
         return (
