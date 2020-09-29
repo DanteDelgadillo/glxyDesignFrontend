@@ -60,6 +60,7 @@ const DashBoard = () => {
     }
 
     const purchaseHistory = history => {
+        console.log("hi", history)
         return (
             <div className="card mb-5">
                 <h3 className="card-header" style={{ backgroundColor: "rgba(143,106,255,1)", color: "white" }}>Purchase history</h3>

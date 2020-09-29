@@ -7,10 +7,11 @@ import moment from 'moment'
 
 
 const PurchaseOrder = (props) => {
-    const [purchaseData, setPurchaseData] = useState({})
+    const [purchaseData, setPurchaseData] = useState([])
     const [error, setError] = useState(false)
+    const [stuff, setStuff] = useState([])
 
-    const { user: { _id, name, email, role, address } } = isAuthenticated();
+    const { user: { _id, name, email, } } = isAuthenticated();
     const token = isAuthenticated().token
 
     const loadPurchaseData = orderId => {
@@ -22,7 +23,7 @@ const PurchaseOrder = (props) => {
                     console.log(data.error)
                 } else {
                     setPurchaseData(data)
-                    console.log(data)
+                    setStuff(data.products)
                 }
             })
     }
@@ -33,9 +34,44 @@ const PurchaseOrder = (props) => {
         loadPurchaseData(orderId)
 
 
-    }, [props])
+    }, [props,])
+
+    const test = stuff => {
+        return (
+
+            <div className="table-responsive">
+
+                <table className="table productT">
+                    <tbody>
+                        <tr className="">
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+
+                        {stuff.map((p, i) => (
+
+                            <tr key={i}>
+                                <td>{p.name}</td>
+                                <td>{p.name}</td>
+                                <td>{p.name}</td>
+                                <td>{p.name}</td>
+                            </tr>
+
+                        ))}
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        )
+    }
+
     return (
         <div>
+
             <center>
                 <div className="order">Order#: {purchaseData._id}</div>
                 <span className="orderDate">Date Ordered: {moment(purchaseData.createdAt).format('MM/DD/YYYY')}</span>
@@ -57,13 +93,16 @@ const PurchaseOrder = (props) => {
                     <div className="infoContainer">
                         <h5>Status: {purchaseData.status}</h5>
                         <h5>Tracking: {email}</h5>
-                        <h5>Shipping Address: {email}</h5>
+                        <h5>Shipping Address: {purchaseData.address}</h5>
                     </div>
                 </div>
             </div>
 
+            {/* table */}
+            {test(stuff)}
+
         </div>
-        // <h1>{JSON.stringify(purchaseData)}</h1>
+
 
 
 

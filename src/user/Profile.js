@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from "../core/Layout"
 import { isAuthenticated } from "../auth";
 import { Redirect } from "react-router-dom";
 
@@ -78,12 +77,14 @@ const Profile = ({ match }) => {
         </form>
     )
 
-    return (<Layout title="Profile" description="Update Profile" className="container-fluid">
+    return (
+        <div>
+            <h2 className="mb-4"> Profile:</h2>
+            {profileUpdate(name, email, password)}
+            {redirectUser(success)}
 
-        <h2 className="mb-4"> Profile:</h2>
-        {profileUpdate(name, email, password)}
-        {redirectUser(success)}
-    </Layout>
+        </div>
+
     )
 
 }
