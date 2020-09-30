@@ -4,7 +4,7 @@ import Product from "./Product";
 
 export const getProduct = (sortBy) => {
 
-    return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
+    return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=4`, {
         method: "GET",
     })
         .then(response => {

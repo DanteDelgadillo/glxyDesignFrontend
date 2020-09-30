@@ -3,9 +3,6 @@ import { readOrderId } from "../user/apiUser"
 import { isAuthenticated } from "../auth"
 import moment from 'moment'
 
-
-
-
 const PurchaseOrder = (props) => {
     const [purchaseData, setPurchaseData] = useState([])
     const [error, setError] = useState(false)
@@ -14,6 +11,7 @@ const PurchaseOrder = (props) => {
     const { user: { _id, name, email, } } = isAuthenticated();
     const token = isAuthenticated().token
 
+    // ****api call to get Product*********
     const loadPurchaseData = orderId => {
         const userId = _id
         readOrderId(orderId, userId, token)
@@ -35,10 +33,13 @@ const PurchaseOrder = (props) => {
 
 
     }, [props,])
-
-    const test = productList => {
+    // *************total var********
+    const sum = productList.reduce((accumulator, current) => accumulator + current.price, 0)
+    // **************table function***************
+    const productTable = productList => {
         return (
             <div className="table-responsive pTable">
+                {console.log("fhgjkdsgkhfs", sum)}
                 <table className="table productT">
                     <tbody>
                         <tr className="">
@@ -93,7 +94,11 @@ const PurchaseOrder = (props) => {
             </div>
 
             {/* table */}
-            {test(productList)}
+            {productTable(productList)}
+
+            <div className="totalBox">
+
+            </div>
 
         </div>
 

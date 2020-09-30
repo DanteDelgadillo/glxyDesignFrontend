@@ -65,6 +65,7 @@ const Shop = () => {
 
     const handlePrice = value => {
         const data = prices
+        console.log("hfuidshfukisd", data)
         let array = []
 
         for (let key in data) {
@@ -118,6 +119,7 @@ const Shop = () => {
 
     return (
         <div>
+
             <div>
                 <form className="searchBar">
                     <label>
