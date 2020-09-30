@@ -388,3 +388,22 @@ font-size: 20px;
 .pTable{
 margin-top: 25px;
 }
+
+.totalBox{
+    border: 2px solid rgba(112,112,112,1)!important;
+    overflow: hidden;
+    width: 398px;
+    height: 218px;
+    left: 1382px;
+    top: 1008px;
+    margin-left: 67%;
+    padding:10px 10px 0px 10px;
+}
+
+.line{
+    border: 1px solid rgba(112,112,112,1)!important;
+}
+
+.total{
+    color: rgba(232,33,190,1);
+}

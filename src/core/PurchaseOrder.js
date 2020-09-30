@@ -97,7 +97,13 @@ const PurchaseOrder = (props) => {
             {productTable(productList)}
 
             <div className="totalBox">
-
+                <center>
+                    <h4>Product Total:${sum}</h4>
+                    <h4>Shipping Cost:</h4>
+                    <br />
+                    <hr className="line" />
+                    <h2 className="total">Total:</h2>
+                </center>
             </div>
 
         </div>
