@@ -86,7 +86,7 @@ const Card2 = ({ product,
                         {product.name}
                     </h5>
                 </center>
-                <div >{product.description.substring(0, 75)}</div>
+                {/* <div >{product.description.substring(0, 75)}</div> */}
                 <div >$ {product.price}</div>
                 <div >Categry: {product.category && product.category.name}</div>
                 <div className="text-muted"> Added on {moment(product.createdAt).fromNow()}</div>

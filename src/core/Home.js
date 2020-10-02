@@ -56,9 +56,11 @@ const Home = () => {
 
             <h2 className="pName"> New Arrivals:</h2>
             <div className="homeContainer">
-                {productsByArrival.map((product, i) => (<div key={i} >
-                    <Card2 product={product}></Card2>
-                </div>))}
+                {productsByArrival.map((product, i) => (
+                    <div key={i} >
+                        <Card2 product={product}></Card2>
+                    </div>
+                ))}
             </div>
         </div>
     )

@@ -48,14 +48,12 @@ const Product = (props) => {
 
 
             <h4 className="pName">Related Products :</h4>
-            <div className="homeContainer">
-                <div >
-                    {realtedProduct.map((p, i) => (
-                        <div >
-                            <Card2 key-={i} product={p}></Card2>
-                        </div>
-                    ))}
-                </div>
+            <div className="productContainer">
+                {realtedProduct.map((p, i) => (
+                    <div key-={i}>
+                        <Card2 product={p}></Card2>
+                    </div>
+                ))}
             </div>
         </div>
     )
